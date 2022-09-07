@@ -1,5 +1,6 @@
 * {
     font-family:  'Roboto', sans-serif;
+    color: #fff;
 }
 
 body {
@@ -7,10 +8,7 @@ body {
     display: flex;
     justify-content: center;
     align-items:  center;
-}
-
-.main {
-    color: #fff;
+    flex-direction: column;
 }
 
 .main h2 {
@@ -54,4 +52,37 @@ body {
 .main input.main-search-button:hover {
     background: linear-gradient(90deg, #0A7CA0 0%, #09d3cc 100%);
     transition: .2s;
+}
+
+.error {
+    width: 300px;
+    height: 50px;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 5px;
+
+    background-color: rgba(255, 255, 255, .3);
+}
+
+.error img {
+    width: 35px;
+    height: 35px;
+}
+
+.error > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.error > div > h5 {
+    margin-bottom: -10px;
+    margin-top: 10px;
+    font-size: 20px;
+}
+
+.error > div > p {
+    font-size: 10px;
 }
