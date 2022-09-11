@@ -3,13 +3,6 @@ const error = document.querySelector(".error");
 const searchButton = document.querySelector(".main-search-button");
 const searchField = document.querySelector(".main-search-field");
 
-class search {
-    constructor(valid, path) {
-        this.isValid = valid;
-        this.requestPath = path;
-    }
-}
-
 function toggle(result) {
     if (!result) {
         error.classList.add('active');
@@ -41,16 +34,12 @@ searchButton.onclick = async function () {
                 document.querySelector(".w-title-info > h4").innerHTML = data.address;
                 document.querySelector(".w-title-info-location").innerHTML = data.resolvedAddress;
                 document.querySelector(".w-title-info-date").innerHTML = data.currentConditions.datetime;
-
-                let nodes = document.getElementsByClassName(".w-rep-content-info_item-info");
-
-                for (let i = 0; i < nodes.length; i++) {
-                    if (node[i].innerHTML == '') {
-                        node[i].innerHTML = 'No info';
-                    }
-                }
+                document.querySelector(".w-deg > img").setAttribute('src', 'assets/' + data.currentConditions.icon + '.png');
+                document.querySelector(".w-title > img").setAttribute('src', 'assets/mini-' + data.currentConditions.icon + '.png');
+                document.querySelector(".w-rep-content-time > img").setAttribute('src', 'assets/mini-' + data.currentConditions.icon + '.png');
             });
         })
         .then(data => data);
 
 };
+
